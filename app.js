@@ -20,6 +20,11 @@
                 templateUrl: 'home/home.view.html',
                 controllerAs: 'vm'
             })
+            .when('/details/:id', {
+                controller: 'DetailsController',
+                templateUrl: 'details/details.view.html',
+                controllerAs: 'vm'
+            })
             .when('/about', {
                 controller: 'AboutController',
                 templateUrl: 'about/about.view.html',

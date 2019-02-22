@@ -3,13 +3,15 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
+        .controller('DetailsController', DetailsController);
 
-    HomeController.$inject = ['$scope', 'GitService', 'UserService', '$rootScope', '$http'];
+    DetailsController.$inject = ['$scope', 'GitService', 'UserService', '$rootScope', '$http', '$routeParams'];
 
-    function HomeController($scope, GitService, UserService, $rootScope, $http) {
+    function DetailsController($scope, GitService, UserService, $rootScope, $http, $routeParams) {
+        
+        
+        console.log($routeParams.id);
         var vm = this;
-
         vm.user = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
@@ -18,7 +20,7 @@
         initController();
         // pageView
         // vm.pageVice = [];
-        vm.searchedOne = false;
+
         function initController() {
             loadCurrentUser();
             loadAllUsers();
@@ -70,7 +72,8 @@
         function takeGitUser() {
             debugger;
             vm.gitUser = GitService.GetAll();
-            vm.pageVice = vm.gitUser.slice(0, 10);
+            vm.userData = vm.gitUser[$routeParams.id-1];
+            console.log(vm.userData);
         }
 
         function loadAllUsers() {

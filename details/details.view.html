@@ -1,0 +1,36 @@
+﻿<style>
+    .menu {
+        text-align: right;
+    }
+
+    .profile-image {
+        padding: 5px;
+    }
+
+    .list-of-user {
+        min-height: 400px;
+    }
+
+    .pagination {
+        text-align: center;
+    }
+</style>
+<div class="menu">
+    <a href="#!/" class="btn btn-primary">Home</a>
+    <a href="#!/about" class="btn btn-primary">About Us</a>
+    <a href="#!/login" class="btn btn-primary">Logout</a>
+</div>
+
+<div>
+    <a href="#!/" class="btn btn-primary">Back</a>
+</div>
+<div class="list-of-user">
+
+<h1>{{vm.userData.login}}</h1>
+
+<img class="profile-image" width="260px" src="{{vm.userData.avatar_url}}">
+<p><a href="#">{{vm.userData.html_url}}</a></p>
+</div>
+<div>
+    <a href="#!/" class="btn btn-primary">Back</a>
+</div>
